@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Application Form</title>
+</head>
+<body>
+    <form action="inputExa.html">
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="name" placeholder="Enter your name" required></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" placeholder="Enter your email" required></td>
+        </tr>
+        <tr>
+            <td>Phone Number</td>
+            <td><input type="tel" name="phone" pattern="[0-9]{10}" placeholder="Enter your 10-digit phone number" required></td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td><textarea name="address" placeholder="Enter your address" required></textarea></td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td><input type= "radio" name="gender" value="male" required>Male</td>
+            <td><input type= "radio" name="gender" value="female  " required>Female</td>
+            <td><input type= "radio" name="gender" value="other" required>Other</td>
+        </tr>
+        <tr>
+            <td>Computer Knowledge</td>
+            <td>
+                <input type="checkbox" name="html"> HTML <br>
+                <input type="checkbox" name="css"> CSS <br>
+                <input type="checkbox" name="js"> JS <br>
+                <input type="checkbox" name="python"> Python <br>
+            </td>
+        </tr>
+        <tr>
+            <td>Submit</td>
+            <td><input type="submit" value="Apply"></td>
+        </tr>
+
+
+    </table>
+    </form>
+</body>
+</html>
