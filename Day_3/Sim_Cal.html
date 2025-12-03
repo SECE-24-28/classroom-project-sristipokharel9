@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function demo(){
+        let na = parseInt(document.getElementById("t1").value);
+        let ji = parseInt(document.getElementById("t2").value);
+        //le x=parseInt(a);
+        //let x=parseInt(b);
+        //let c=x+y;  
+        let c=na+ji;
+        document.getElementById("t3").value = c;
+    }
+</script>
+<body>
+    <input type"text" placeholder="Enter first number" id="t1">
+    <input type"text" placeholder="Enter second number" id="t2">
+    <input type"text" placeholder="Answer" id="t3">
+    <button onclick="demo()">Click Me</button>
+</body>
+</html>

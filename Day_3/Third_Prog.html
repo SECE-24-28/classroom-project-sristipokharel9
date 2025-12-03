@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function demo(){
+            let na = document.getElementById("t1").value;
+            document.getElementById("t2").value = na;
+            alert("Value Copied");
+          
+        }
+    </script>
+</head>
+<body>
+
+    <input type="text" placeholder="Enter First" id="t1">
+    <input type="text" placeholder="Copied value" id="t2">
+
+    <button onclick="demo()">Click Me</button>
+
+</body>
+</html>
