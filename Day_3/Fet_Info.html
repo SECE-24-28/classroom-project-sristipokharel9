@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function demo(){
+            let sport = document.getElementById("sports").value;
+            alert("You have selected: " + sport);
+        }
+    </script>
+</head>
+<body>
+
+    <select id="sports">
+        <option value="Cricket">Cricket</option>
+        <option value="Football">Football</option>
+        <option value="Hockey">Hockey</option>
+        <option value="Tennis">Tennis</option>
+        <option value="Swimming">Swimming</option>
+    </select>
+
+    <button onclick="demo()">Click me</button>
+
+</body>
+</html>
