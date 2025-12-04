@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let photos = ["Cofee.jpg", "Ele.png", "Husky.png", "Fewa.png", "Po.png"];
+        let index = 0;
+
+        function showImage() {
+            document.getElementById("im").src = photos[index];
+        }
+
+        function nextImage() {
+            index++;
+            if (index >= photos.length) {
+                index = 0;
+            }
+            showImage();
+        }
+
+        function previousImage() {
+            index--;
+            if (index < 0) {
+                index = photos.length - 1;
+            }
+            showImage();
+        }
+        setInterval(nextImage,1000);
+    </script>
+    
+</head>
+
+<body>
+    <img src="Cofee.jpg" width="400" height="400" id="im">
+
+    <br><br>
+    <button onclick="previousImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+</body>
+</html>
