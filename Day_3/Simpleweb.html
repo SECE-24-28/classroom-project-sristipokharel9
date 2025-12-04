@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Site</title>
+  <style>
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f6fb;color:#111}
+    .wrap{max-width:800px;margin:30px auto;padding:16px}
+    header{display:flex;justify-content:space-between;align-items:center}
+    nav a{margin:0 8px;text-decoration:none;color:#333}
+    .hero{background:#fff;padding:20px;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.06);margin-top:16px}
+    .hero h1{margin:0 0 8px}
+    .grid{display:flex;gap:12px;margin-top:12px}
+    .card{flex:1;background:#fff;padding:12px;border-radius:6px}
+    footer{margin-top:18px;text-align:center;color:#666;font-size:14px}
+    input,textarea{width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:4px}
+    button{padding:8px 12px;border:0;background:#2563eb;color:#fff;border-radius:6px}
+    @media(max-width:600px){.grid{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div style="font-weight:700">SimpleSite</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#features">Features</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Simple, clean starter</h1>
+      <p>Use this minimal template to start a small website. No frameworks — plain HTML, CSS and JS.</p>
+
+      <div class="grid" id="features">
+        <div class="card">
+          <h3>Fast</h3>
+          <p>Small and quick to load.</p>
+        </div>
+        <div class="card">
+          <h3>Responsive</h3>
+          <p>Works on phones and desktop.</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="margin-top:14px" id="contact">
+      <div class="card">
+        <h3>Contact</h3>
+        <form id="form">
+          <label>Name</label>
+          <input id="name" placeholder="Your name" />
+          <label style="margin-top:8px">Email</label>
+          <input id="email" placeholder="you@example.com" />
+          <label style="margin-top:8px">Message</label>
+          <textarea id="msg" rows="4" placeholder="Hi..."></textarea>
+          <div style="margin-top:8px;text-align:right">
+            <button type="submit">Send</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © SimpleSite • 2025
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('form').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var msg = document.getElementById('msg').value.trim();
+      if(name.length < 2){alert('Enter name (2+ chars)'); return}
+      if(email.indexOf('@') === -1){alert('Enter valid email'); return}
+      if(msg.length < 4){alert('Message too short'); return}
+      alert('Thanks, ' + name + '! (demo)');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
