@@ -1,0 +1,54 @@
+<html>
+<head>
+    <style>
+        .taskItem {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+
+        .done {
+            text-decoration: line-through;
+            color: gray;
+        }
+    </style>
+
+    <script>
+        function addTask() {
+            let task = document.getElementById("taskInput").value;
+
+            if (task) {
+                let taskBox = document.createElement("div");
+                taskBox.className = "taskItem";
+
+                let textSpan = document.createElement("span");
+                textSpan.innerText = task;
+
+                textSpan.onclick = function () {
+                    textSpan.classList.toggle("done");
+                };
+
+
+                let delBtn = document.createElement("button");
+                delBtn.innerText = "Delete";
+                delBtn.onclick = function () {
+                    taskBox.remove();
+                };
+
+                taskBox.appendChild(textSpan);
+                taskBox.appendChild(delBtn);
+
+                document.body.appendChild(taskBox);
+                document.getElementById("taskInput").value = "";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Simple To-Do App</h1>
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <button onclick="addTask()">Add</button>
+</body>
+</html>
