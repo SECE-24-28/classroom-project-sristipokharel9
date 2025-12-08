@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load and Search Users</title>
+</head>
+<body>
+
+    <button onclick="loadUsers()">Load Users</button>
+    <br><br>
+
+    <input type="text" id="searchBox" placeholder="Search name..." onkeyup="searchUsers()">
+    <br><br>
+
+    <div id="output"></div>
+
+    <script>
+        let allUsers = []; 
+        async function loadUsers() {
+            const res = await fetch("https://jsonplaceholder.typicode.com/users");
+            allUsers = await res.json();   
+            
+            displayUsers(allUsers);        
+        }
+
+        function displayUsers(users) {
+            let out = document.getElementById("output");
+            out.innerHTML = ""; 
+
+            users.forEach(u => {
+                let div = document.createElement("div");
+                div.textContent = u.name;
+                out.appendChild(div);
+            });
+        }
+
+        function searchUsers() {
+            let text = document.getElementById("searchBox").value.toLowerCase();
+
+            let filtered = allUsers.filter(user =>
+                user.name.toLowerCase().includes(text)
+            );
+
+            displayUsers(filtered);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save Contact</title>
+</head>
+<body>
+
+    Name: <input type="text" id="t1"><br><br>
+    Phone: <input type="text" id="t2"><br><br>
+
+    <button id="bt">Save</button>
+    <button id="rd">Read</button>
+
+    <h3>Saved Contacts:</h3>
+    <div id="output"></div>
+
+    <script>
+        let t1 = document.getElementById("t1");
+        let t2 = document.getElementById("t2");
+        let saveBtn = document.getElementById("bt");
+        let readBtn = document.getElementById("rd");
+        let output = document.getElementById("output");
+
+        // Load existing contacts or create empty array
+        let contactList = JSON.parse(localStorage.getItem("contacts")) || [];
+
+        saveBtn.addEventListener("click", () => {
+            let na = t1.value;
+            let ph = t2.value;
+
+            let frnd = { fna: na, fph: ph };
+            contactList.push(frnd);
+
+            localStorage.setItem("contacts", JSON.stringify(contactList));
+
+            t1.value = "";
+            t2.value = "";
+        });
+
+        readBtn.addEventListener("click", () => {
+            let data = JSON.parse(localStorage.getItem("contacts")) || [];
+            
+            output.innerHTML = ""; // clear
+
+            data.forEach((c, i) => {
+                output.innerHTML += `${i+1}. ${c.fna} - ${c.fph}<br>`;
+            });
+        });
+    </script>
+
+</body>
+</html>

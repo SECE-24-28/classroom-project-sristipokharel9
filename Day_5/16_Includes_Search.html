@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Friends</title>
+</head>
+<body>
+
+    <input type="text" id="t1" placeholder="Search friend...">
+    <ul id="list"></ul>
+
+    <script>
+        let t1 = document.getElementById("t1");
+        let ls = document.getElementById("list");
+
+        let frnds = ["Aryan", "Liam", "Suri", "Kyaotsa", "Beliwab", "Terimaki"];
+
+        function demo() {
+            ls.innerHTML = "";
+
+            frnds.forEach(fr => {
+                if (fr.toLowerCase().includes(t1.value.toLowerCase())) {
+                    let li = document.createElement("li");
+                    li.innerHTML = fr;
+                    ls.appendChild(li);
+                }
+            });
+        }
+
+        t1.addEventListener("keyup", demo);
+        demo(); 
+    </script>
+
+</body>
+</html>
