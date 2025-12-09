@@ -4,30 +4,42 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+      const [list,setList] =useState([
+        {id:1,sname:"Vinoth",fee:true},
+        {id:2,sname:"Shiva",fee:false},
+        {id:3,sname:"Harish",fee:true}
+      ]);
 
+      const handleDelete=(id)=>
+      {
+      const newList=list.filter((ls)=>ls.id!=id)
+      setList(newList)
+      }
+      const handleCheck=(id)=>
+      {
+         const newList=list.map((ls)=>(ls.id===id)?({...ls,fee:!ls.fee}):(ls))
+         setList(newList)
+      }
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+         <h1>Students List</h1>
+         <hr />
+        <ul>
+        {
+           list.map((ls)=>
+            <li key={ls.id}>
+                  <input type="checkbox" checked={ls.fee} 
+                                         onChange={()=>handleCheck(ls.id)} />
+                  <label>{ls.sname}</label>
+                  <button onClick={()=>handleDelete(ls.id)}>Delete</button>
+            </li>
+          )
+        }
+        </ul>
+           
+           <br /><br />
+
+           <p>Student count : {list.length}</p>
     </>
   )
 }
