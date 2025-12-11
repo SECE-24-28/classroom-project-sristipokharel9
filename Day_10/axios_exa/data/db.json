@@ -1,0 +1,22 @@
+{
+    "student": [
+        {
+            "id": 1,
+            "name": "Sowmya",
+            "age": 20,
+            "major": "Computer Science"
+        },
+        {
+            "id": 2,
+            "name": "Soundarya",
+            "age": 22,
+            "major": "Mathematics"
+        },
+        {
+            "id": 3,
+            "name": "Geetha",
+            "age": 21,
+            "major": "Physics"
+        }
+    ]
+}

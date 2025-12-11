@@ -4,9 +4,9 @@ import Content from './Content'
 import Header from './Header'
 function App() {
 
-  let city = "Kathmandu";
+  /* let city = "Kathmandu";
   let nums = [11, 22, 33];
-  let age = 15;
+  let age = 15;*/ 
   let frnds=["Smith","Victor","Nelson","Rohit"]
 
   const [num, setNum] = useState(50);
