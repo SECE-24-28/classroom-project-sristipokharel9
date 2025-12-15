@@ -1,0 +1,12 @@
+[
+  {
+    "cid": 1,
+    "cname": "JavaScript Fundamentals",
+    "cdur": "4 weeks"
+  },
+  {
+    "cid": 2,
+    "cname": "React Development",
+    "cdur": "6 weeks"
+  }
+]
